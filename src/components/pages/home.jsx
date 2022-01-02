@@ -21,15 +21,15 @@ export default function Home({featured, listVideo }) {
         <div className='home'>
             <Featured featured={dataFeatured}/>
 
-            <div className='allVideos'>
-                <CardVideo video={listVideo ? listVideo.items[1] : null} />
-                <CardVideo video={listVideo ? listVideo.items[1] : null} />
-                <CardVideo video={listVideo ? listVideo.items[1] : null} />
-                <CardVideo video={listVideo ? listVideo.items[1] : null} />
-                <CardVideo video={listVideo ? listVideo.items[1] : null} />
-                <CardVideo video={listVideo ? listVideo.items[1] : null} />
-                <CardVideo video={listVideo ? listVideo.items[1] : null} />
-                <CardVideo video={listVideo ? listVideo.items[1] : null} />
+            <div className='effectBackground'>
+                <div className='allVideos'>
+                    <CardVideo video={listVideo ? listVideo.items[1] : null} />
+                    <CardVideo video={listVideo ? listVideo.items[1] : null} />
+                    <CardVideo video={listVideo ? listVideo.items[1] : null} />
+                    <CardVideo video={listVideo ? listVideo.items[1] : null} />
+                    <CardVideo video={listVideo ? listVideo.items[1] : null} />
+                    <CardVideo video={listVideo ? listVideo.items[1] : null} />
+                </div>
             </div>
         </div>
     )

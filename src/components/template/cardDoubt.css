@@ -1,0 +1,18 @@
+.cardDoubt{
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 30px;
+}
+
+.cardDoubt h2{
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.cardDoubt p{
+    color: #ffffff;
+    text-shadow: 1px 1px 5px #070707;
+    font-weight: 300;
+    font-size: 1.2em;
+
+    padding: 5px;
+}
