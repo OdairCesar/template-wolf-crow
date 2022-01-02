@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect, useState } from 'react'
+import { getChannel, getListVideo} from './service/apiYouTubeV3'
 
-function App() {
+export default function App() {
+  const [ channel, setChannel ] = useState({})
+  const [ listVideo, setListVideo ] = useState([])
+
+  useEffect(() => {
+    const loadAll = async() => {
+      const channel = await getChannel()
+      setChannel(channel.items[0])
+
+      const list = await getListVideo()
+      setListVideo(list)
+    }
+
+    loadAll()
+  }, [])
+ 
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      Olá mundo
     </div>
   );
 }
-
-export default App;
