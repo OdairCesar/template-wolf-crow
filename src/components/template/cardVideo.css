@@ -1,12 +1,17 @@
 .card{
-    width: 30%;
-    padding: 15px;
-    margin-bottom: 25px;
-
-    background-color: #ffffff1a;
-
+    width: 29%;
+    padding: 30px 30px 20px 30px;
+    
     font-family: 'Montserrat', sans-serif;
     color: #d3d3d3;
+    transition: all ease 0.8s;
+}
+
+.card:hover{
+    background-color: #d3d3d369;
+    padding-top: 20px;
+    padding-bottom: 30px;
+
 }
 
 .card img{
