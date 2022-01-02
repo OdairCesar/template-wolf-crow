@@ -9,16 +9,18 @@ const basicFetch = async (search) => {
     return json
 }
 
-export async function getChannel(){
-    const channel = await basicFetch(`channels?part=snippet&id=${ID_CHANNEL}&key=${API_KEY}`)
-    return channel
-}
+// eslint-disable-next-line import/no-anonymous-default-export
+export default {
+    getChannel: async() => {
+        const channel = await basicFetch(`channels?part=snippet&id=${ID_CHANNEL}&key=${API_KEY}`)
+        return channel
+    },
 
-export async function getListVideo(){
-    const list = await basicFetch(`playlistItems?part=snippet,contentDetails&maxResults=50&order=date&playlistId=${ID_LIST}&key=${API_KEY}`)
-    return list
+    getListVideo: async() => {
+        const list = await basicFetch(`playlistItems?part=snippet,contentDetails&maxResults=50&order=date&playlistId=${ID_LIST}&key=${API_KEY}`)
+        return list
+    }
 }
-
 /*
  *exemplo para buscar informações do canal:
  *https://www.googleapis.com/youtube/v3/channels?part=snippet&id=z3-XfZcVTxMhoacG&key=IzaSyBWaaKdU5BcgJr4thOrMZKbPco4

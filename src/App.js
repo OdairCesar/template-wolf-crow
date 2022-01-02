@@ -10,24 +10,28 @@ import Curiosities from './components/pages/curiosities'
 
 import './App.css'
 
-import { getChannel, getListVideo} from './service/apiYouTubeV3'
+import apiYT from './service/apiYouTubeV3'
 
 export default function App() {
   const [ channel, setChannel ] = useState({})
   const [ listVideo, setListVideo ] = useState([])
+  const [ featured, setFeatured ] = useState(null)
 
   useEffect(() => {
     const loadAll = async() => {
-      const channel = await getChannel()
+      const channel = await apiYT.getChannel()
       setChannel(channel.items[0])
 
-      const list = await getListVideo()
-      setListVideo(list)
+      const list = await apiYT.getListVideo()
+      console.log(list.items[0])
+      setListVideo(list.items)
+
+      setFeatured(list.items[0])
     }
 
     loadAll()
   }, [])
- 
+
   return (
     <Router>
       <div className="App">
@@ -35,7 +39,7 @@ export default function App() {
         <Routes>
           <Route 
             path='/contact'
-            element={<Contact />}
+            element={<Contact channel={channel}/>}
           />
           <Route 
             path='store'
@@ -51,7 +55,7 @@ export default function App() {
           />
           <Route 
             exact path='/'
-            element={<Home />}
+            element={<Home featured={featured} list={listVideo}/>}
           />
           <Route 
             path="*" 
