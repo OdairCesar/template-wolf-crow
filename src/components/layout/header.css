@@ -1,0 +1,11 @@
+.cabecalho{
+    height: 130px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+.logotipo img{
+    width: 150px;
+    height: 130px;
+}

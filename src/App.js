@@ -8,6 +8,8 @@ import Videos from './components/pages/videos'
 import Home from './components/pages/home'
 import Curiosities from './components/pages/curiosities'
 
+import './App.css'
+
 import { getChannel, getListVideo} from './service/apiYouTubeV3'
 
 export default function App() {
