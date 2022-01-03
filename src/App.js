@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 
 import Header from './components/layout/header'
 import Contact from './components/pages/contact'
-import Store from './components/pages/store'
 import Videos from './components/pages/videos'
 import Home from './components/pages/home'
 import Curiosities from './components/pages/curiosities'
@@ -42,16 +41,12 @@ export default function App() {
             element={<Contact channel={channel}/>}
           />
           <Route 
-            path='store'
-            element={<Store />}
-          />
-          <Route 
             path='/videos'
             element={<Videos channel={channel} listVideo={listVideo}/>}
           />
           <Route 
             path='/curiosities'
-            element={<Curiosities />}
+            element={<Curiosities listVideo={listVideo}/>}
           />
           <Route 
             exact path='/'
