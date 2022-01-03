@@ -15,9 +15,9 @@ export default function Menu() {
                 <Link to='/videos'>
                     <li>Videos</li>
                 </Link>
-                <Link to='/store'>
+                <a href="https://biolinky.co/coonnect" target='black'>
                     <li>Loja</li>
-                </Link>
+                </a>
                 <Link to='/contact'>
                     <li>Contato</li>
                 </Link>

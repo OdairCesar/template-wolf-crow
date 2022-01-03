@@ -3,12 +3,17 @@ import React from 'react'
 import './cardVideo.css'
 
 export default function cardVideo({ video }) {
+    const snippet = {
+        image: video.snippet.thumbnails.medium.url,
+        title: video.snippet.title,
+        date: video.snippet.publishedAt,
+    }
     return (
         <div className='card'>
-            <img src='https://i.ytimg.com/vi/WkZNNr79X-k/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLDyL6Yjo2QgrNIXg33eHcGKbDKKHA' alt='thumbnail'/>
+            <img src={snippet.image} alt='thumbnail'/>
             <button className='btn-card'>Quadrinhos</button>
-            <h2 className='title'>Injustiça Deuses entre Nós - O Filme</h2>
-            <p className='date'>29/10/2017</p>
+            <h2 className='title'>{snippet.title}</h2>
+            <p className='date'>{snippet.date}</p>
         </div>
     )
 }

@@ -14,7 +14,7 @@ import apiYT from './service/apiYouTubeV3'
 
 export default function App() {
   const [ channel, setChannel ] = useState({})
-  const [ listVideo, setListVideo ] = useState([])
+  const [ listVideo, setListVideo ] = useState({})
   const [ featured, setFeatured ] = useState(null)
 
   useEffect(() => {
@@ -23,10 +23,9 @@ export default function App() {
       setChannel(channel.items[0])
 
       const list = await apiYT.getListVideo()
-      console.log(list.items[0])
       setListVideo(list.items)
 
-      setFeatured(list.items[0])
+      setFeatured(list.items[0].snippet)
     }
 
     loadAll()
@@ -55,7 +54,7 @@ export default function App() {
           />
           <Route 
             exact path='/'
-            element={<Home featured={featured} list={listVideo}/>}
+            element={<Home featured={featured} listVideo={listVideo}/>}
           />
           <Route 
             path="*" 
