@@ -18,14 +18,15 @@ export default function App() {
   const [ featured, setFeatured ] = useState(null)
 
   useEffect(() => {
+    let numRandom = Math.floor(Math.random() * (25 - 0) + 0)
     const loadAll = async() => {
       const channel = await apiYT.getChannel()
-      setChannel(channel.items[0])
+      setChannel(channel.items[0].snippet)
 
       const list = await apiYT.getListVideo()
       setListVideo(list.items)
 
-      setFeatured(list.items[0].snippet)
+      setFeatured(list.items[numRandom].snippet)
     }
 
     loadAll()
@@ -46,7 +47,7 @@ export default function App() {
           />
           <Route 
             path='/videos'
-            element={<Videos />}
+            element={<Videos channel={channel} listVideo={listVideo}/>}
           />
           <Route 
             path='/curiosities'
