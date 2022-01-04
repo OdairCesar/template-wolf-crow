@@ -7,10 +7,19 @@ import Load from '../template/load'
 import Featured from '../template/featured'
 
 export default function Home({featured, listVideo}) {
-    const [ dataFeatured, setDataFeatured ] = useState({})
+    const [ dataFeatured, setDataFeatured ] = useState({
+        image: ' ',
+        imageWidth: ' ', 
+        title: ' ',
+        description: ' ',
+        isCreateButton: false,
+        isDate: false,
+        link: ' ',
+        date: ' '
+    })
     const [ visivel, setVisivel ] = useState(true)
     const [ videos, setVideos ] = useState([])
-    
+
     useEffect(()=>{
         if(featured){
             setDataFeatured({
@@ -23,25 +32,25 @@ export default function Home({featured, listVideo}) {
                 link: `https://www.youtube.com/watch?v=${featured.resourceId.videoId}`,
                 date: featured.publishedAt
             })
-            setVisivel(false)
-        }else{
-            setVisivel(true)
         }
 
         if(listVideo){
             setVideos(listVideo)
-            setVisivel(false)
-        }else{
+        }
+
+        if(typeof listVideo === 'undefined' || typeof featured === 'undefined'){
             setVisivel(true)
+        }else{
+            setVisivel(false)
         }
     }, [featured, listVideo])
 
     return (
         <div className='home'>
             <Featured featured={dataFeatured}/>
-
-            <ViewVideos list={videos} limit={true}/>
-
+            <main>
+                <ViewVideos list={videos} limit={true}/>
+            </main>
             <Load visivel={visivel}/>
         </div>
     )

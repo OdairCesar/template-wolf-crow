@@ -38,7 +38,7 @@ export default function App() {
         <Routes>
           <Route 
             path='/contact'
-            element={<Contact channel={channel}/>}
+            element={<Contact channel={channel} listVideo={listVideo}/>}
           />
           <Route 
             path='/videos'

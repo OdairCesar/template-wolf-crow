@@ -7,10 +7,23 @@ import Featured from '../template/featured'
 export default function Videos({ channel, listVideo }) {
     const [ videos, setVideos ] = useState([])
     const [ visivel, setVisivel ] = useState(true)
-    const [ dataFeatured, setDataFeatured ] = useState({})
+    const [ dataFeatured, setDataFeatured ] = useState({
+        image: ' ',
+        imageWidth: ' ', 
+        title: ' ',
+        description: ' ',
+        isCreateButton: false,
+        isDate: false,
+        link: ' ',
+        date: ' '
+    })
+
+    function isEmptyObject(obj){
+        return !!Object.values(obj).length  
+    }
 
     useEffect(()=>{
-        if(channel){
+        if(isEmptyObject(channel)){
             setDataFeatured({
                 image: channel.thumbnails.medium.url,
                 imageWidth: channel.thumbnails.medium.width, 
@@ -21,16 +34,16 @@ export default function Videos({ channel, listVideo }) {
                 link: `https://www.youtube.com/channel/${channel.id}`,
                 date: channel.publishedAt
             })
-            setVisivel(false)
-        }else{
-            setVisivel(true)
         }
 
         if(listVideo){
             setVideos(listVideo)
-            setVisivel(false)
-        }else{
+        }
+
+        if(typeof listVideo === 'undefined' || typeof channel === 'undefined'){
             setVisivel(true)
+        }else{
+            setVisivel(false)
         }
     }, [channel, listVideo])
 

@@ -41,7 +41,7 @@ export default function Curioosities({ listVideo }) {
         }else{
             setVisivel(true)
         }
-    }, [])
+    }, [listVideo])
 
     return (
         <div className='curiosities'>
