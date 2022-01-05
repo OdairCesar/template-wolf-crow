@@ -1,6 +1,5 @@
 .allVideos{
-    max-width: 2000px;
-    width: 1400px;
+    max-width: 1400px;
     display: flex;
     margin: 0 auto 0 auto;
     padding-top: 50px;

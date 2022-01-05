@@ -1,5 +1,5 @@
 .contactAndPrew{
-    width: 1400px;
+    max-width: 1400px;
     max-width: 2000px;
     margin: 0 auto;
 
@@ -129,4 +129,10 @@
 }
 .btnSubmit:hover{
     background-color: #d3d3d369;
+}
+
+@media(max-width: 1024px){
+    .contactAndForm{
+        width: 100%;
+    }
 }

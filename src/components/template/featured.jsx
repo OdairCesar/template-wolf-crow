@@ -6,7 +6,13 @@ export default function Featured({ featured }){
     return(
         <div className='featured'>
             <div className='featured-container'>
-                <img style={{width: featured.imageWidth}} src={featured.image} alt='thumbnail'/>
+                <img style={{
+                    maxWidth: featured.imageWidth,
+                    minWidth: '150px'
+                    }} 
+                    src={featured.image} 
+                    alt='thumbnail'
+                />
                 <div className='information'>
                     <h1>{featured.title}</h1>
                     <p>{featured.description}</p>
