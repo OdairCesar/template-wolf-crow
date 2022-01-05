@@ -1,0 +1,132 @@
+.contactAndPrew{
+    width: 1400px;
+    max-width: 2000px;
+    margin: 0 auto;
+
+    display: flex;
+}
+
+.contactAndForm{
+    width: 65%;
+    padding: 90px 40px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.socialAndContact{
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.socialAndContact h2{
+    color: #bdbdbd;
+    font-size: 2.5em;
+    margin: 20px 0;
+}
+
+.socialAndContact p{
+    color: #fff;
+    font-size: 1.2em;
+    margin-left: 10px;
+    text-shadow: 1px 1px 5px #070707;
+    font-weight: 300;
+}
+
+.socialAndContact span{
+    font-weight: 700;
+}
+
+.socialMidia{
+    width: 45%;
+    background-color: #7979793b;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contacts{
+    width: 45%;
+    padding: 20px 0;
+    background-color: #7979793b;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.iconMidia {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.iconMidia img{
+    width: 90px;
+}
+
+.form{
+    margin-top: 30px;
+    padding: 30px;
+    background-color: #7979793b;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.form h2{
+    color: #bdbdbd;
+}
+
+.form label{
+    color: #dbdbdb;
+    font-size: 1.2em;
+
+    display: flex;
+    flex-direction: column;
+
+    margin-top: 15px;
+}
+.inputSimple{
+    padding: 5px;
+    margin-top: 5px;
+
+    border: none;
+    border-radius: 3px;
+
+    font-size: 1em;
+}
+
+.inputArea{
+    padding: 5px;
+    margin-top: 5px;
+
+    font-size: 1.2em;
+    height: 150px;
+
+    border: none;
+    border-radius: 3px;
+}
+
+.btnSubmit{
+    background-color: #d3d3d31a;
+    padding: 15px;
+    margin-top: 25px;
+
+    border: none;
+    transition: all ease 0.5s;
+
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: 1em;
+    text-align: center;
+    color: #d3d3d3;
+    cursor: pointer;
+}
+.btnSubmit:hover{
+    background-color: #d3d3d369;
+}

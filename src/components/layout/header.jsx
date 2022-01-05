@@ -4,7 +4,7 @@ import Menu from './menu'
 
 import './header.css'
 
-import logo from '../../assets/imgs/logo-tipo.png'
+import logo from '../../assets/imgs/logo-tipo2.png'
 
 export default function header() {
     return (
