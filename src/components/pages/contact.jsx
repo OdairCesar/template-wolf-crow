@@ -11,7 +11,7 @@ import image from '../../assets/imgs/contact.png'
 
 import './contact.css'
 
-export default function Contact({ channel, listVideo }) {
+export default function Contact({ listVideo }) {
     const [ dataFeatured, setDataFeatured ] = useState({
         image: ' ',
         imageWidth: ' ', 
@@ -24,29 +24,24 @@ export default function Contact({ channel, listVideo }) {
     })
     const [ visivel, setVisivel ] = useState(true)
 
-    function isEmptyObject(obj){
-       return !!Object.values(obj).length  
-    }
 
     useEffect(() => {
-        if(isEmptyObject(channel)){
-            setDataFeatured({
-                image: image, 
-                title: 'Fale conosco',
-                description: 'Redes socias do canal e informações para entrar em contato com o Wolf Crow',
-                isCreateButton: false,
-                isDate: true,
-                link: `https://www.youtube.com/channel/${channel.id}`,
-                date: channel.publishedAt
-            })
-        }
+        setDataFeatured({
+            image: image, 
+            title: 'Fale conosco',
+            description: 'Redes socias do canal e informações para entrar em contato com o Wolf Crow',
+            isCreateButton: false,
+            isDate: true,
+            link: ' ',
+            date: '2022-01-05'
+        })
 
-        if(typeof listVideo === 'undefined' || typeof channel === 'undefined'){
+        if(typeof listVideo === 'undefined'){
             setVisivel(true)
         }else{
             setVisivel(false)
         }
-    }, [listVideo, channel])
+    }, [listVideo])
 
     return (
         <div className='contact'>
@@ -90,7 +85,7 @@ export default function Contact({ channel, listVideo }) {
                             <input className='btnSubmit' type='submit' value='Enviar' />
                         </form>
                     </div>
-                    <RelatedMatters doubt={false} list={listVideo}/>
+                    <RelatedMatters  doubt={false} list={listVideo}/>
                 </div>
             </main>
             <Load visivel={visivel}/>

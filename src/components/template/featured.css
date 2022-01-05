@@ -31,7 +31,7 @@
 }
 .information p{
     max-width: 660px;
-    height: 170px;
+    max-height: 170px;
     font-weight: 300;
     font-size: 1.2em;
     overflow: hidden;
@@ -70,5 +70,20 @@
         max-width: 600px;
         align-items: center;
         text-align: center;
+    }
+}
+@media(max-width: 750px){
+    .featured-container{
+        max-width: 450px;
+    }
+    
+    .information{
+        max-width: 450px;
+        align-items: center;
+        text-align: center;
+    }
+
+    .information p{
+        max-width: 450px;
     }
 }

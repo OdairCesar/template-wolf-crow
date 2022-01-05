@@ -1,12 +1,25 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
 import './cardVideo.css'
 
-export default function cardVideo({ video, definedWidth='29%' }) {
+let width = '29%'
+if(window.innerWidth < 750){
+    width = '95%'
+}else if(window.innerWidth < 1024){
+    width = '45%'
+}
+
+export default function CardVideo({ video, definedWidth=width }) {
+    
+    let year = video.snippet.publishedAt.substr(0, 4)
+    let month = video.snippet.publishedAt.substr(5, 2)
+    let day = video.snippet.publishedAt.substr(8, 2)
+    let firstDate = `${day}/${month}/${year}`
+
     const snippet = {
         image: video.snippet.thumbnails.medium.url,
         title: video.snippet.title,
-        date: video.snippet.publishedAt,
+        date: firstDate,
         link: video.contentDetails.videoId
     }
     return (

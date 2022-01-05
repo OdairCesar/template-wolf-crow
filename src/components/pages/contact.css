@@ -136,3 +136,22 @@
         width: 100%;
     }
 }
+
+@media(max-width: 750px){
+    .socialAndContact{
+        width: 100%;
+        padding: 0;
+        
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contacts{
+        margin-top: 10px;
+        width: 100%;
+    }
+
+    .socialMidia{
+        width: 100%;
+    }
+}

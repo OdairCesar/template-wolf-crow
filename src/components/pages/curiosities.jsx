@@ -18,7 +18,7 @@ export default function Curioosities({ listVideo }) {
         isCreateButton: false,
         isDate: true,
         link:'https://youtu.be/7-DKkYyD-iA',
-        date: '02/01/2022'
+        date: '2022-01-02'
     }
 
     const doubt = [{

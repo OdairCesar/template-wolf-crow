@@ -1,15 +1,24 @@
 .cabecalho{
     width: 100%;
-    max-width: 2000px;
+    max-width: 1300px;
     height: 130px;
     margin: 0 auto 0 auto;
 
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
 }
 .logotipo img{
     width: 130px;
-    height: 130px;
+}
+@media(max-width: 750px){
+    .cabecalho{
+        padding: 0 10px 0 10px;
+        box-sizing: border-box;
+        height: 100px;
+    }
+    .logotipo img{
+        width: 90px;
+    }
 }
