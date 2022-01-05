@@ -4,19 +4,21 @@ import ViewVideos from '../template/viewVideos'
 import Load from '../template/load'
 import Featured from '../template/featured'
 
+const initialState ={
+    image: ' ',
+    imageWidth: ' ', 
+    title: ' ',
+    description: ' ',
+    isCreateButton: false,
+    isDate: false,
+    link: ' ',
+    date: ' '
+}
+
 export default function Videos({ channel, listVideo }) {
     const [ videos, setVideos ] = useState([])
     const [ visivel, setVisivel ] = useState(true)
-    const [ dataFeatured, setDataFeatured ] = useState({
-        image: ' ',
-        imageWidth: ' ', 
-        title: ' ',
-        description: ' ',
-        isCreateButton: false,
-        isDate: false,
-        link: ' ',
-        date: ' '
-    })
+    const [ dataFeatured, setDataFeatured ] = useState(initialState)
 
     function isEmptyObject(obj){
         return !!Object.values(obj).length  

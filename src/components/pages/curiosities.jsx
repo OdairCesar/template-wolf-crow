@@ -8,19 +8,20 @@ import Load from '../template/load'
 import image from '../../assets/imgs/curiosities.png'
 import './curiosities.css'
 
+const initialState ={
+    image: ' ',
+    imageWidth: ' ', 
+    title: ' ',
+    description: ' ',
+    isCreateButton: false,
+    isDate: false,
+    link: ' ',
+    date: ' '
+}
+
 export default function Curioosities({ listVideo }) {
     const [ visivel, setVisivel ] = useState(true)
-
-    const dataFeatured = {
-        image: image,
-        title: 'Curiosidades da Marvel e DC Comics',
-        description: `Estimular a imaginação, criação de gosto pela leitura, ampliação do vocabulário e melhora ortográfica: poderia muito bem ser o planejamento de uma aula, mas são quatro benefícios que as HQs trazem pra gente! Penetre no mundo das histórias de quadrinhos e descubra mais curiosidades sobre o assunto!`,
-        isCreateButton: false,
-        isDate: true,
-        link:'https://youtu.be/7-DKkYyD-iA',
-        date: '2022-01-02'
-    }
-
+    const [ dataFeatured, setDataFeatured ] = useState(initialState)
     const doubt = [{
             id: 0,
             query: 'Capitão America morreu duas vezes ou uma?',
@@ -36,6 +37,16 @@ export default function Curioosities({ listVideo }) {
     }]
 
     useEffect(() => {
+        setDataFeatured({
+            image: image,
+            title: 'Curiosidades da Marvel e DC Comics',
+            description: `Estimular a imaginação, criação de gosto pela leitura, ampliação do vocabulário e melhora ortográfica: poderia muito bem ser o planejamento de uma aula, mas são quatro benefícios que as HQs trazem pra gente! Penetre no mundo das histórias de quadrinhos e descubra mais curiosidades sobre o assunto!`,
+            isCreateButton: false,
+            isDate: true,
+            link:'https://youtu.be/7-DKkYyD-iA',
+            date: '2022-01-02'
+        })
+
         if(listVideo){
             setVisivel(false)
         }else{

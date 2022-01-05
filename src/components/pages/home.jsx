@@ -6,17 +6,19 @@ import ViewVideos from '../template/viewVideos'
 import Load from '../template/load'
 import Featured from '../template/featured'
 
+const initialState ={
+    image: ' ',
+    imageWidth: ' ', 
+    title: ' ',
+    description: ' ',
+    isCreateButton: false,
+    isDate: false,
+    link: ' ',
+    date: ' '
+}
+
 export default function Home({featured, listVideo}) {
-    const [ dataFeatured, setDataFeatured ] = useState({
-        image: ' ',
-        imageWidth: ' ', 
-        title: ' ',
-        description: ' ',
-        isCreateButton: false,
-        isDate: false,
-        link: ' ',
-        date: ' '
-    })
+    const [ dataFeatured, setDataFeatured ] = useState(initialState)
     const [ visivel, setVisivel ] = useState(true)
     const [ videos, setVideos ] = useState([])
 

@@ -11,17 +11,19 @@ import image from '../../assets/imgs/contact.png'
 
 import './contact.css'
 
+const initialState ={
+    image: ' ',
+    imageWidth: ' ', 
+    title: ' ',
+    description: ' ',
+    isCreateButton: false,
+    isDate: false,
+    link: ' ',
+    date: ' '
+}
+
 export default function Contact({ listVideo }) {
-    const [ dataFeatured, setDataFeatured ] = useState({
-        image: ' ',
-        imageWidth: ' ', 
-        title: ' ',
-        description: ' ',
-        isCreateButton: false,
-        isDate: false,
-        link: ' ',
-        date: ' '
-    })
+    const [ dataFeatured, setDataFeatured ] = useState(initialState)
     const [ visivel, setVisivel ] = useState(true)
 
 
